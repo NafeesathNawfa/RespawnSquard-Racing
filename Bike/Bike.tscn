@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cq4bcx7mkrul7"]
+
+[ext_resource type="Texture2D" uid="uid://1iqy0a8wj71f" path="res://Assets/bike white base.png" id="1_0o6xt"]
+[ext_resource type="Script" uid="uid://bl6obyia67bec" path="res://Bike/bike.gd" id="1_okg57"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vla22"]
+atlas = ExtResource("1_0o6xt")
+region = Rect2(7, 12, 18, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60kow"]
+atlas = ExtResource("1_0o6xt")
+region = Rect2(35, 14, 20, 39)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bili7"]
+radius = 5.0
+height = 37.0
+
+[node name="Bike" type="CharacterBody2D" unique_id=879412593]
+script = ExtResource("1_okg57")
+
+[node name="SpriteTop" type="Sprite2D" parent="." unique_id=337466938]
+unique_name_in_owner = true
+texture = SubResource("AtlasTexture_vla22")
+
+[node name="SpriteSide" type="Sprite2D" parent="." unique_id=1186139745]
+unique_name_in_owner = true
+visible = false
+rotation = 1.5707964
+texture = SubResource("AtlasTexture_60kow")
+
+[node name="BikeCollisionShape" type="CollisionShape2D" parent="." unique_id=520185617]
+position = Vector2(0, 0.5)
+shape = SubResource("CapsuleShape2D_bili7")
